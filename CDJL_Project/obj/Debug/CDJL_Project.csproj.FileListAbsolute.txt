@@ -1,0 +1,9 @@
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\bin\Debug\CDJL_Project.exe.config
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\bin\Debug\CDJL_Project.exe
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\bin\Debug\CDJL_Project.pdb
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.csprojResolveAssemblyReference.cache
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.mainWindow.resources
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.Properties.Resources.resources
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.csproj.GenerateResource.Cache
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.exe
+C:\Users\Cale\Documents\Visual Studio 2013\Projects\CDJL_Project\CDJL_Project\obj\Debug\CDJL_Project.pdb
