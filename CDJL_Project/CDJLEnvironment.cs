@@ -13,15 +13,8 @@ using Graph = System.Windows.Forms.DataVisualization.Charting;
 
 namespace CDJL_Project
 {
-
-
-
-
-
     public partial class mainWindow : Form
     {
-
-
         List<NodeWindow> activeNodes = new List<NodeWindow>();
         Graph.Chart chart;
         Graph.Chart chart2;
@@ -98,8 +91,6 @@ namespace CDJL_Project
                 set { lock (_dataInLocker) { _dataIn = value; } }
             }
         }
-
-
         
         private void mainWindow_Load(object sender, EventArgs e)
         {
@@ -155,16 +146,12 @@ namespace CDJL_Project
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Node_Click(object sender, EventArgs e)
         {
-
-            NodeWindow node = new NodeWindow();
+            NodeWindow node = new NodeWindow(this.ActiveControl.Name);
             activeNodes.Add(node);
-
-           
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        }        
+        private void connect_Click(object sender, EventArgs e)
         {
             TCP_socket sock = new TCP_socket();
             Thread monitor = new Thread(new ThreadStart(monitorData));
@@ -172,7 +159,7 @@ namespace CDJL_Project
             monitor.Start();   
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void query_Click(object sender, EventArgs e)
         {
             Exchange.queryData = true;
 

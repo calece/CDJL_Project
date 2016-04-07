@@ -14,7 +14,8 @@ namespace CDJL_Project
         Timer timer = new Timer();
         Graph.Chart nodeChart;
         int localXCoord = 0;
-        public NodeWindow()
+        string name;
+        public NodeWindow(string name)
         {
             window = new Form();
             this.timer.Tick += new System.EventHandler(this.updateChart);
@@ -24,7 +25,8 @@ namespace CDJL_Project
             nodeChart.Dock = window.Dock;
             nodeChart.Location = new System.Drawing.Point(0, 0);
             nodeChart.Size = new System.Drawing.Size(320, 180);
-            window.ClientSize = new System.Drawing.Size(400, 400);
+            window.ClientSize = new System.Drawing.Size(320, 180);
+            window.Text = name;
             nodeChart.ChartAreas.Add("phMap");
             nodeChart.ChartAreas["phMap"].AxisX.Minimum = 0;
             nodeChart.ChartAreas["phMap"].AxisX.Maximum = 100;
