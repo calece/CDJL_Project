@@ -60,31 +60,19 @@
             this.query = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            
-            // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            
-            //this.Node2.Click += new System.EventHandler(this.Node2_Click);
-
-           
-
-
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(239, 448);
+            this.textBox1.Location = new System.Drawing.Point(50, 425);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
+            this.textBox1.Size = new System.Drawing.Size(200, 25);
             this.textBox1.TabIndex = 1;
             // 
             // button2
             // 
-            this.initConnection.Location = new System.Drawing.Point(239, 414);
+            this.initConnection.Location = new System.Drawing.Point(150, 400);
             this.initConnection.Name = "connect";
-            this.initConnection.Size = new System.Drawing.Size(75, 23);
+            this.initConnection.Size = new System.Drawing.Size(75, 25);
             this.initConnection.TabIndex = 2;
             this.initConnection.Text = "Connect";
             this.initConnection.UseVisualStyleBackColor = true;
@@ -92,9 +80,9 @@
             // 
             // button3
             // 
-            this.query.Location = new System.Drawing.Point(321, 414);
+            this.query.Location = new System.Drawing.Point(50, 400);
             this.query.Name = "Query";
-            this.query.Size = new System.Drawing.Size(75, 23);
+            this.query.Size = new System.Drawing.Size(75, 25);
             this.query.TabIndex = 3;
             this.query.Text = "Query";
             this.query.UseVisualStyleBackColor = true;
@@ -104,7 +92,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(400, 400);
+
+
+
             this.Controls.Add(this.Node0);
             this.Controls.Add(this.Node1);
             this.Controls.Add(this.Node2);
@@ -133,15 +124,15 @@
             //Enable Array of Node Buttons
             int nodeX = 0;
             int nodeY = 0;
-            int nodeNum = 0;
+            int nodeNum = 1;
 
             foreach (System.Windows.Forms.Button button in this.Controls)
             {
                 
                 button.Location = new System.Drawing.Point(nodeX, nodeY);
-                button.Name = "Node" + nodeNum;
+                button.Name = "Sensor " + nodeNum;
                 button.Size = new System.Drawing.Size(75, 75);
-                button.TabIndex = 0;
+                button.TabIndex = nodeNum;
                 button.Text = "Sensor" + nodeNum;
                 button.UseVisualStyleBackColor = true;
                 button.Click += new System.EventHandler(this.Node_Click);

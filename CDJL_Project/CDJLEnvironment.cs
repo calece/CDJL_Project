@@ -36,12 +36,21 @@ namespace CDJL_Project
             {
                 if (Exchange.inDataReady)
                 {
+                    int nodeNum;
                     Exchange.inDataReady = false;
-                    string data = Exchange.dataIn;
-
+                    string[] data = Exchange.dataIn.Split(' ');
+                    Int32.TryParse(data[0], out nodeNum);
+                    foreach (NodeWindow node in activeNodes)
+                    {
+                        if (node.nodeNum == nodeNum)
+                        {
+                            Double.TryParse(data[1], out node.tempSensor);
+                            Double.TryParse(data[2], out node.humidSensor);
+                        }                        
+                    }
                     Func<int> del = delegate()
                     {
-                        textBox1.Text = data;
+                        //textBox1.Text = data;
                         return 0;
                     };
                     try { Invoke(del); }
@@ -101,7 +110,7 @@ namespace CDJL_Project
             
             chart.Location = new System.Drawing.Point(0, 0);
             chart.Size = new System.Drawing.Size(320, 360);
-            
+            this.Size = new System.Drawing.Size(425, 500);
             
             // Add a chartarea called "draw", add axes to it and color the area black
             chart.ChartAreas.Add("phMap");
@@ -140,15 +149,10 @@ namespace CDJL_Project
             //Controls.Add(chart2);
         }
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            
-            
-        }
 
         private void Node_Click(object sender, EventArgs e)
         {
-            NodeWindow node = new NodeWindow(this.ActiveControl.Name);
+            NodeWindow node = new NodeWindow(this.ActiveControl.TabIndex);
             activeNodes.Add(node);
         }        
         private void connect_Click(object sender, EventArgs e)
@@ -162,7 +166,6 @@ namespace CDJL_Project
         private void query_Click(object sender, EventArgs e)
         {
             Exchange.queryData = true;
-
         }
 
         

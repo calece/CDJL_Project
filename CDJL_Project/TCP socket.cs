@@ -19,22 +19,29 @@ namespace CDJL_Project
 
         public TCP_socket()
         {
-            initializeSocket();
-
-            rxThread.IsBackground = true;
-            rxThread.Start();
-            txThread.IsBackground = true;
-            txThread.Start();
+            try
+            {
+                initializeSocket();
+                rxThread.IsBackground = true;
+                rxThread.Start();
+                txThread.IsBackground = true;
+                txThread.Start();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Connection Already Runnning");
+            }
+            
         }
 
-        ~TCP_socket()
-        {
-            Console.WriteLine("************************DISPOSED**************************");
-            Console.Read();
+        //~TCP_socket()
+        //{
+        //    Console.WriteLine("************************DISPOSED**************************");
+        //    Console.Read();
 
-            serverSocket.Close();
-            rxThread.Abort();
-        }
+        //    serverSocket.Close();
+        //    rxThread.Abort();
+        //}
 
         private static int retryCount = 0;
 
@@ -76,13 +83,13 @@ namespace CDJL_Project
                 {
                     Console.WriteLine(e.Message);
                     Console.Read();
-                    if (retryCount > 100)
-                        bailout = true;
+                    //if (retryCount > 100)
+                    //    bailout = true;
 
-                    serverSocket.Close();
-                    serverSocket.Connect(ADDRESS, PORT);
-                    Console.WriteLine("reconnected");
-                    stm = serverSocket.GetStream();
+                    //serverSocket.Close();
+                    //serverSocket.Connect(ADDRESS, PORT);
+                    //Console.WriteLine("reconnected");
+                    //stm = serverSocket.GetStream();
                 }
                 retryCount = 0;
 
@@ -125,13 +132,13 @@ namespace CDJL_Project
                 {
                     Console.WriteLine(e.Message);
                     //Console.Read();
-                    if (retryCount > 100)
-                        bailout = true;
+                    //if (retryCount > 100)
+                    //    bailout = true;
 
-                    serverSocket.Close();
-                    serverSocket.Connect(ADDRESS, PORT);
-                    Console.WriteLine("reconnected");
-                    stm = serverSocket.GetStream();
+                    //serverSocket.Close();
+                    //serverSocket.Connect(ADDRESS, PORT);
+                    //Console.WriteLine("reconnected");
+                    //stm = serverSocket.GetStream();
                 }
                 retryCount = 0;
 
